@@ -24,6 +24,8 @@ top_student = ""
 most_consistent = ""
 smallest_range = float('inf')
 students_below_70 = []
+total_grades = 0
+sum_all_grades = 0
 for name in class_journal:
      grades = class_journal[name]
      avg = sum(grades) / len(grades)
@@ -38,6 +40,10 @@ if grade_range < smallest_range:
     most_consistent = name
 if any(g < 70 for g in grades):
         students_below_70.append(name)
+        total_grades += len(grades)
+        sum_all_grades += sum(grades)
+
+class_average = sum_all_grades / total_grades
 
 with open("report.txt", "w") as file:
       file.write(" CLASS REPORT \n\n")
@@ -50,3 +56,7 @@ with open("report.txt", "w") as file:
         file.write("   " + ", ".join(students_below_70) + "\n\n")
       else:
         file.write("   None\n\n")
+      file.write("4. Total Grades Entered:\n")
+      file.write("   " + str(total_grades) + "\n\n")
+      file.write("5. Overall Class Average:\n")
+      file.write("   " + str(round(class_average, 2)) + "\n")

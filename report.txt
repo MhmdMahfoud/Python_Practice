@@ -9,3 +9,8 @@
 3. Students with at least one grade below 70:
    Ziad
 
+4. Total Grades Entered:
+   3
+
+5. Overall Class Average:
+   69.33
