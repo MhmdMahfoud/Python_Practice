@@ -18,4 +18,16 @@ for name in class_journal:
      print("Name: " + name)
      print("Grades: " + str(grade))
      print("Average: " + str(round(avg, 2)))
-     
+
+highest_avg = 0
+top_student = ""
+for name in class_journal:
+     grades = class_journal[name]
+     avg = sum(grades) / len(grades)
+if avg > highest_avg:
+        highest_avg = avg
+        top_student = name
+with open("report.txt", "w") as file:
+      file.write(" CLASS REPORT \n\n")
+      file.write("1. Highest Average:\n")
+      file.write("   " + top_student + " with " + str(highest_avg) + "\n\n")
