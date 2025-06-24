@@ -6,3 +6,6 @@
 2. Most Consistent Performance:
    Ziad with a grade range of 13
 
+3. Students with at least one grade below 70:
+   Ziad
+
