@@ -11,4 +11,11 @@ for name,grade in records:
         class_journal[name].append(grade)
     else:
             class_journal[name] = [grade]
-print(class_journal)
+
+for name in class_journal:
+     grade=class_journal[name]
+     avg =sum(grade)/len(grade)
+     print("Name: " + name)
+     print("Grades: " + str(grade))
+     print("Average: " + str(round(avg, 2)))
+     
