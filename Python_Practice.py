@@ -3,7 +3,8 @@ records = [
 ["Ziad", 62], ["Jana", 97], ["Tariq", 73], ["Ziad", 71], ["Layla", 86],
 ["Jana", 94], ["Ziad", 75]
 ]
-
+new_grades = [["Jana", 99], ["Ziad", 78], ["Layla", 84]]
+all_records = records + new_grades
 class_journal = {
 }
 for name,grade in records:
@@ -60,3 +61,6 @@ with open("report.txt", "w") as file:
       file.write("   " + str(total_grades) + "\n\n")
       file.write("5. Overall Class Average:\n")
       file.write("   " + str(round(class_average, 2)) + "\n")
+      file.write("6. Full Grade Book:\n")
+      for student in class_journal:
+        file.write("   " + student + ": " + str(class_journal[student]) + "\n")
