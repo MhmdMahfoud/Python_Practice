@@ -3,3 +3,12 @@ records = [
 ["Ziad", 62], ["Jana", 97], ["Tariq", 73], ["Ziad", 71], ["Layla", 86],
 ["Jana", 94], ["Ziad", 75]
 ]
+
+class_journal = {
+}
+for name,grade in records:
+    if name in class_journal:
+        class_journal[name].append(grade)
+    else:
+            class_journal[name] = [grade]
+print(class_journal)
