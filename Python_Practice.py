@@ -21,13 +21,23 @@ for name in class_journal:
 
 highest_avg = 0
 top_student = ""
+most_consistent = ""
+smallest_range = float('inf')
 for name in class_journal:
      grades = class_journal[name]
      avg = sum(grades) / len(grades)
+     max_grade = max(grades)
+     min_grade = min(grades)
+     grade_range = max_grade - min_grade
 if avg > highest_avg:
         highest_avg = avg
         top_student = name
+if grade_range < smallest_range:
+    smallest_range = grade_range
+    most_consistent = name
 with open("report.txt", "w") as file:
       file.write(" CLASS REPORT \n\n")
       file.write("1. Highest Average:\n")
       file.write("   " + top_student + " with " + str(highest_avg) + "\n\n")
+      file.write("2. Most Consistent Performance:\n")
+      file.write("   " + most_consistent + " with a grade range of " + str(smallest_range) + "\n\n")
